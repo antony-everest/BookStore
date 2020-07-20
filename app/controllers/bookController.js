@@ -17,7 +17,9 @@ exports.addBook = (req, res) => {
     // saving in the DB
     try {
         bookService.saveBooks(book)
-        res.send(data);
+        res.send({
+            message: "Book has beed added suucessfully to the store"
+        });
     } catch (err) {
         res.status(500).send({
             message: err.message || "error occurred while adding books."
